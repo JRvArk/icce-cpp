@@ -1,0 +1,9 @@
+# mac
+.DS_Store
+
+# built files
+*.o
+*.out
+*.exe
+main
+solution

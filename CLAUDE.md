@@ -50,6 +50,7 @@ make clean
 ## Coding Conventions
 
 - All class data members must be prefixed with `d_` (e.g., `d_position`, `d_current_line`). This is the style used throughout the course.
+- Each function (including each class member function) gets its own `.cpp` file, named after the function (e.g., `next.cpp` for `Line::next`).
 
 ## Toolchain
 

@@ -1,4 +1,4 @@
-# icce-cpp
+# cpp-course
 
 Personal solutions to the exercises from the **C/C++ course** by the Department of Computing Science at the University of Groningen.
 

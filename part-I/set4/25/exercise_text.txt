@@ -1,0 +1,6 @@
+Purpose of this exercise: familiarize yourself with some key concepts of classes.
+Describe in your own words what `encapsulation' and `data hiding' means, and why these concepts are important when designing classes.
+
+Provide a small example of a self-defined class illustrating your explanation.
+
+The example only requires you to submit a class interface, not a class implementation. Why is the implementation irrelevant?

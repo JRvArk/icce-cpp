@@ -1,0 +1,28 @@
+Purpose of this exercise: design a class using composition
+Design the class Parser. It's a class using the facilities of the class Line (cf. the previous exercise), and having a Line d_line data member. It has the following pubic members:
+
+bool reset(): it fills d_line with the next input line, returning true if such a line was read;
+Return number(double *dest) returns the value stored in the next substring of the just read line. Its return type is an enum. The enum is defined by Parser, having the following values:
+NO_NUMBER: the substring didn't contain a number;
+NUMBER: the substring did contain a number;
+EOLN: the line didn't contain any more substrings;
+bool isIntegral(): returns the value of its d_integral data member (i.e., true if the value found by number is an integral value, so it doesn't contain dots, 'e' or 'E' characters).
+std::string next(): returns d_line's next substring.
+It has two private members:
+
+Return convert(double *dest, std::string const &str), handling the conversion from str to a double, also taking care of failing conversions. Since the convert function must use a facility we haven't covered yet, its implementation is provided here:
+    #include "parser.ih"
+
+    Parser::Return Parser::convert(double *dest, string const &str)
+    try
+    {
+        return pureDouble(dest, str) ? NUMBER : NO_NUMBER;
+    }
+    catch (...)                                 // conversion failed
+    {
+        return NO_NUMBER;
+    }
+The member calls pureDouble (described next) returning NUMBER. If pureDouble returns true then convert return NUMBER and NO_NUMBER when it returns false. However, stod itself may fail which is handled by convert's catch phrase, returning NO_NUMBER. These exceptional situations are handled early in part II of this course. For now, simply add convert to the class as one of its private members;
+
+
+bool pureDouble(double *dest, std::string const &str) uses stod to convert the str's content to a double. All the str's characters must be used when computing the double. If not, then false is returned, otherwise true. If the conversion succeeds and str containst dot or 'e' or 'E' characters then the member d_integral is set to false, otherwise to true.

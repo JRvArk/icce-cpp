@@ -1,0 +1,15 @@
+Purpose of this exercise: design a simple calculator
+Design a class Calculator providing a simple calculator. It can add, subtract, divide and multiply two values, and if the values are positive integral values it can compute their modulo value. For these computations the operands are, respectively, +, -, /, *, and %.
+
+Input lines are interactively provided by the user, following a simple prompt (like ?) followed by a space, and these lines follow the syntax
+
+
+    number operator number
+        
+The class Calculator has only one public member (run), expecting no arguments and performing the calculations and interactions with the user until the user enters an empty line, whereafter run ends.
+
+The calculator merely performs the calculations, and shows the values of the entered expressions, or an error message if a line is incorrectly formatted or if the expression itself is invalid (like divisions or modulo computations where the right-hand side (rhs) operands are zero. Operands are considered zero if their absolute values are less than 1e-8. In addition, the operands of modulo computations must be non-negative integral values.
+
+For parsing input lines the class has a member bool expression(), which uses a member bool number(double *dest, bool *isInt) to parse the next line element as a number and bool getOperator() which returns true if the next line element is a valid operator. If expression() returns true then evaluate() performs the requested computation, inserting the expression's value in cout.
+
+Submit your class's header file, followed by the implementations of its members. Also explain why you don't have to define a constructor for the class Calculator

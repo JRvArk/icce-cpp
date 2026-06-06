@@ -1,0 +1,17 @@
+Encapsulation is bundling data and related functions (methods) into a single
+unit.
+
+Data hiding is a practice of making some of the data in the unit inaccessible
+to the user. At least directly.
+
+Both are great for offering an interface to a user. Here is a thing, that does
+x, y and z, and here is how to use it. By hiding data the user is forced to
+use it in the intended, safe, way. The user doesn't need to know about
+internal implementation.
+
+It is also great for program maintenance, one part of a program is all collected
+(encapsulated) in one unit. The maintainer of that unit knows about the internal
+details, and can fix or update things if necessary.
+
+The implementation is irrelevant for the user of the class. It can use the
+facilities provided by the class without having the know how it is implemented.
